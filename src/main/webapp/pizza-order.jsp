@@ -18,7 +18,7 @@
 <jsp:include page="partials/navbar.jsp" />
 
 <div>
-    <form action="/pizza-order.jsp" method="post">
+    <form action="${pageContext.request.contextPath}/pizza-order" method="post">
         <h1>Order Your Pizza</h1>
         <h2>Select Crust Type</h2>
         <label for="thin-crust"></label>
