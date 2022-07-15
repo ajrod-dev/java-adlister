@@ -10,48 +10,50 @@
 
 <html>
 <head>
-    <jsp:include page="partials/head.jsp">
-        <title>Order Pizza</title>
-    </jsp:include>
+
 </head>
 <body>
-<jsp:include page="partials/navbar.jsp" />
 
-<div>
-    <form action="${pageContext.request.contextPath}/pizza-order" method="post">
+
+<div id="pizza-form">
+    <form action="pizza-order" method="post">
         <h1>Order Your Pizza</h1>
-        <h2>Select Crust Type</h2>
-        <label for="thin-crust"></label>
-        <input id="thin-crust" name="thin-crust" type="radio" value="thin">
-        <label for="hand-tossed-crust"></label>
-        <input id="hand-tossed-crust" name="hand-tossed-crust" type="radio" value="hand-tossed">
+
+        <label for="crust">Choose Crust</label>
+        <select name="crust" id="crust">
+            <option value="thin-crust">Thin</option>
+            <option value="hand-tossed-crust">Hand-Tossed</option>
+        </select>
         <br>
-        <h2>Select Sauce Type</h2>
-        <label for="marinara"></label>
-        <input id="marinara" name="marinara" type="radio" value="marinara">
-        <label for="alfredo"></label>
-        <input id="alfredo" name="alfredo" type="radio" value="alfredo">
+        <label for="sauce">Select Sauce Type</label>
+        <select name="sauce" id="sauce">
+            <option value="marinara">Marinara</option>
+            <option value="alfredo">Alfredo</option>
+        </select>
         <br>
-        <h2>Select Pizza Size</h2>
-        <label for="18-inch"></label>
-        <input id="18-inch" name="18-inch" type="radio" value="18">
-        <label for="12-inch"></label>
-        <input id="12-inch" name="12-inch" type="radio" value="12">
+        <label for="size">Select Pizza Size</label>
+        <select name="size" id="size">
+            <option value="12">12-inch</option>
+            <option value="14">14-inch</option>
+            <option value="18">18-inch</option>
+        </select>
         <br>
         <h2>Toppings</h2>
-        <label for="pepperoni"></label>
+        <label for="pepperoni">Pepperoni</label>
         <input id="pepperoni" name="pepperoni" type="checkbox" value="pepperoni">
-        <label for="ham"></label>
+        <label for="ham">Ham</label>
         <input id="ham" name="ham" type="checkbox" value="ham">
-        <label for="sausage"></label>
+        <label for="sausage">Sausage</label>
         <input id="sausage" name="sausage" type="checkbox" value="sausage">
-        <label for="pineapple"></label>
+        <label for="pineapple">Pineapple</label>
         <input id="pineapple" name="pineapple" type="checkbox" value="pineapple">
-        <label for="jalapenos"></label>
-        <input id="jalapenos" name="jalapenos" type="checkbox" value="jalapenos">
+        <label for="jalapenos">Jalapenos</label>
+        <input id="jalapenos" type="checkbox" value="jalapenos">
         <br>
-        <label for="delivery-address"></label>
+        <br>
+        <label for="delivery-address">Delivery Address</label>
         <input id="delivery-address" type="text">
+        <input name = "submit" id="submit" type="submit">
     </form>
 </div>
 </body>
