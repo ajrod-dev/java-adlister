@@ -15,26 +15,20 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/profile.jsp").forward(request, response);
         }else {
             request.getRequestDispatcher("/login.jsp").forward(request, response);
-
         }
-
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        boolean alreadyLoggedIn = false;
         boolean validAttempt = username.equals("admin") && password.equals("password");
         if(validAttempt){
            session.setAttribute("user", username);
-           session.setAttribute("alreadyLoggedIn", alreadyLoggedIn);
             response.sendRedirect("/profile");
         }else{
             response.sendRedirect("/login");
         }
-
     }
-
 
 }
