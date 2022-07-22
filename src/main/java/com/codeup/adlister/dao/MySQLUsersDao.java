@@ -27,7 +27,7 @@ public class MySQLUsersDao implements Users {
         Statement stmt = null;
         try{
             stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE username=" + username);
+            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE username='" +username+ "'");
             while (rs.next()) {
                 user.setId(rs.getLong("id"));
                 user.setUsername(rs.getString("username"));

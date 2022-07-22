@@ -15,7 +15,7 @@
 <body>
 <div class="container">
     <h1>User Registration</h1>
-    <form action="/users/register" method="post">
+    <form action="/register" method="post">
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text">
